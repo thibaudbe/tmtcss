@@ -1,0 +1,27 @@
+// Mixin
+// ---
+
+clearfix() {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+// Grid layout
+colWidth(n) {
+  unit($gutter+(n/$columns)*100, "%");
+}
+
+// Columns builder
+colBuilder($name) {
+  for $i in 1..11 {
+    & > .col-{$name}-{$i} {
+      width: colWidth($i)
+    }
+  }
+  & > .col-{$name}-12 { width: 100%; }
+}
+
+percentage(n1, n2) {
+  unit((n1/n2)*100, "%")
+}
