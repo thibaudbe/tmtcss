@@ -10,30 +10,54 @@
   &::after {
     clearfix();
   }
-  
+
   // Columns
   > [class^="col-"] {
     *display: inline;
     *zoom: 1;
     display: inline-block;
     margin-bottom: ($gutter * -20 px);
-    
+
     // Reset
     font-size: $fontSize;
     text-align: left;
   }
-  
+
   // Align
   > [class^="col-"] { vertical-align: top }
   &.align-middle > [class^="col-"] { vertical-align: middle }
   &.align-bottom > [class^="col-"] { vertical-align: bottom }
-  
-  // General builder
-  colBuilder(md);
-  colBuilder(sm);
+
+  // Small grid - xs
   colBuilder(xs);
+  > {
+    [class^="col-lg-"],
+    [class^="col-md-"],
+    [class^="col-sm-"] { width: 100% }
+  }
 }
 
+.visible-xs { display: block !important; }
+.hidden-xs { display: none !important; }
+
+
+// Mobile grid - sm
+@media only screen and (min-width: $mobileW) {
+  .grid {
+    colBuilder(sm);
+  }
+  .visible-sm { display: block !important; }
+  .hidden-sm { display: none !important; }
+}
+
+// Medium grid - md
+@media only screen and (min-width: $tabletW) {
+  .grid {
+    colBuilder(md);
+  }
+  .visible-md { display: block !important; }
+  .hidden-md { display: none !important; }
+}
 
 // Large grid - lg
 @media screen and (min-width: $desktopW) {
@@ -42,42 +66,4 @@
   }
   .visible-lg { display: block !important; }
   .hidden-lg { display: none !important; }
-}
-
-// Medium grid - md
-@media only screen and (max-width: $desktopW) {
-  .grid {
-    colBuilder(md);
-    > {
-      [class^="col-lg-"] { width: 100% }
-    }
-  }
-  .visible-md { display: block !important; }
-  .hidden-md { display: none !important; }
-}
-
-// Mobile grid - sm
-@media only screen and (max-width: $mobileW) {
-  .grid {
-    colBuilder(sm);
-    > {
-      [class^="col-lg-"],
-      [class^="col-md-"] { width: 100% }
-    }
-  }
-  .visible-sm { display: block !important; }
-  .hidden-sm { display: none !important; }
-}
-
-// Small grid - xs
-@media only screen and (max-width: $mobileW) {
-  .grid {
-    > {
-      [class^="col-lg-"],
-      [class^="col-md-"],
-      [class^="col-sm-"] { width: 100% }
-    }
-  }
-  .visible-xs { display: block !important; }
-  .hidden-xs { display: none !important; }
 }

@@ -1,0 +1,163 @@
+// DEMO
+// ---
+
+// Fonts
+* {
+  // Smoother font rendering
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+	font-smooth: always;
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3.3em;
+  margin-bottom: .2em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 0 0 .75em;
+}
+
+legend {
+  padding-top: 2em;
+  border-top: 1px solid #ddd;
+  margin: 30px auto 1em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+code {
+  background: #f7f8fb;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+
+// Global
+html, body {
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  color: #313F5C;
+}
+
+body {
+  color: #313F5C;
+  font-family: "Lucida grande";
+  font-size: $fontSize;
+  font-size: 1em;
+  line-height: 1.5;
+	// line-height: 16px;
+  &::before {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px;
+    background-color: #BBBBBB;
+    font-size: .6rem;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 0 0 4px;
+    content: "Mobile - xs";
+  }
+}
+
+header {
+  border-top: 4px solid #313F5C;
+  background-color: #79e6b5;
+  padding: 9em 0;
+  text-align: center;
+  margin-bottom: 20px;
+  h1 {
+    line-height: 1.2;
+  }
+}
+
+section {
+  padding: 4em 0;
+}
+
+.grid {
+  padding-top: 40px;
+}
+
+.container {
+  max-width: 1200px;
+  text-align: center;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+footer {
+  text-align: center;
+  background: #FC8D83;
+  padding: 6em 0;
+  color: #CB5247;
+  margin-top: 6em;
+  a {
+    color: #CB5247;
+    text-decoration: underline;
+  }
+}
+
+.grid {
+  &:not(:first-of-type) {
+    border-bottom: 1px solid #F7F7F7;
+    padding-top: 20px;
+  }
+}
+
+[class^="col-"]::before {
+  content: attr(class);
+  display: block;
+  font-style: initial;
+  text-align: center;
+  display: block;
+  background: #eee;
+  // margin: 0 $gutter;
+  margin-bottom: $gutter;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.big::before { padding: 25% 0 }
+.medium::before { padding: 20% 0 }
+.small::before { padding: 10% 0 }
+
+
+// Mobile grid - sm
+@media only screen and (min-width: $mobileW) {
+  body::before {
+    content: "Mobile - sm";
+  }
+}
+
+// Medium grid - md
+@media only screen and (min-width: $tabletW) {
+  body::before {
+    content: "Tablet - md";
+  }
+}
+
+// Large grid - lg
+@media only screen and (min-width: $desktopW) {
+  body::before {
+    content: "Desktop - lg";
+  }
+}

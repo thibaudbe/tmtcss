@@ -8,8 +8,8 @@ clearfix() {
 }
 
 // Grid layout
-colWidth(n) {
-  unit($gutter+(n/$columns)*100, "%");
+colWidth($n) {
+  unit($gutter+($n/$columns)*100, "%");
 }
 
 // Columns builder
@@ -22,6 +22,6 @@ colBuilder($name) {
   & > .col-{$name}-12 { width: 100%; }
 }
 
-percentage(n1, n2) {
-  unit((n1/n2)*100, "%")
+percentage($n1, $n2) {
+  unit(($n1/$n2)*100, "%")
 }
