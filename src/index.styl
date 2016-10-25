@@ -1,7 +1,46 @@
+// Config
+// ---
+
+// Width
+$desktopW = 960px
+$tabletW = 780px
+$mobileW = 420px
+$smallW = 340px
+
+// Grid system
+$gutter = -.2
+$columns = 12
+$fontSize = 14px
+
+
+// Mixin
+// ---
+
+clearfix() {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+// Grid layout
+colWidth($n) {
+  unit($gutter+($n/$columns)*100, "%");
+}
+
+// Columns builder
+colBuilder($name) {
+  for $i in 1..11 {
+    & > .col-{$name}-{$i} {
+      width: colWidth($i)
+    }
+  }
+  & > .col-{$name}-12 { width: 100%; }
+}
+
+
 // Grid system
 // ---
 
-// Wrapper
 .grid {
   text-align: justify;
   text-justify: distribute-all-lines;

@@ -133,8 +133,7 @@ export default React.createClass({
         <section>
           <div className="container">
             <legend>Align top</legend>
-            <p>Justify content if your items doesn't satisfied de 12 columns</p>
-            <p><code>grid align-top</code></p>
+            <p>Auto justify content & <code>grid align-top</code></p>
             <div className="grid align-top">
               <div className="col-xs-4 big"></div>{'\n'}
               <div className="col-xs-2 small"></div>{'\n'}

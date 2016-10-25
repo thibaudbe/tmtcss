@@ -10,13 +10,14 @@
     "stylus"
   ],
   "scripts": {
-    "build": "npm run build-js & npm run build-css",
-    "build-js": "browserify src/js/index.js -d -t babelify | uglifyjs -m -c > dist/js/bundle.js",
-    "build-css": "stylus -c src/stylus/ -o dist/css/",
+    "build": "npm run build-js & npm run build-css & npm run build-min-css",
+    "build-js": "browserify src/index.js -d -t babelify | uglifyjs -m -c > dist/js/bundle.js",
+    "build-css": "stylus src/index.styl -o dist/css/tmtcss.css",
+    "build-min-css": "stylus -c src/index.styl -o dist/css/tmtcss.min.css",
     "watch": "npm run watch-js & npm run watch-css & npm run server",
-    "watch-js": "browserify --debug src/js/ -d -o dist/js/bundle.js -v -t babelify",
-    "watch-css": "stylus --sourcemap-inline -w src/stylus/ -o dist/css/",
-    "server": "budo src/js/index.js:dist/js/bundle.js -v --live | garnish"
+    "watch-js": "browserify --debug src/index.js -d -o dist/js/bundle.js -v -t babelify",
+    "watch-css": "stylus --sourcemap-inline -w src/index.styl -o dist/css/tmtcss.css",
+    "server": "budo src/index.js:dist/js/bundle.js -v --live | garnish"
   },
   "browserify": {
     "transform": [

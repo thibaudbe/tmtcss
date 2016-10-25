@@ -1,5 +1,5 @@
 import React from 'react';
-import Index from './components/Index.jsx';
+import Index from './js/Index.jsx';
 
 
 const reactApp = document.querySelector('#reactApp');
@@ -7,7 +7,7 @@ const reactApp = document.querySelector('#reactApp');
 
 document.addEventListener('DOMContentLoaded', () => {
   React.render(
-    <Index />, 
+    <Index />,
     reactApp
   );
 });
