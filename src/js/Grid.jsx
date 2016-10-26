@@ -24,7 +24,7 @@ export default React.createClass({
               fully browser compatible</a>.
             </p>
             <p>
-              You can also you that grid with in JSX. Just add <code>\n</code> whitespaces
+              You can also use that grid with JSX. Just add <code>\n</code> whitespaces
               at the end of each columns.
             </p>
           </div>
