@@ -8,16 +8,27 @@ export default React.createClass({
       <div>
         <section>
           <div className="container">
-            <legend>Extra small grid</legend>
-            <div className="grid">
-              <div className="col-lg-4"></div>{'\n'}
-              <div className="col-lg-4 col-lg-offset-4"></div>{'\n'}
-              <div className="col-lg-3"></div>{'\n'}
-              <div className="col-lg-3 col-lg-offset-6"></div>{'\n'}
-            </div>
+            <p>
+              This is a simple grid made in stylus, but it could be easily 
+              done with another preprocessor.
+            </p>
+            <p>
+              It uses 4 breakpoints represented by classNames 
+              <code>.col-xs-n, .col-sm-n, .col-md-n, .col-lg-n</code> (Bootstrap like) 
+              with the power of <code>display: inline-block;</code>. 
+            </p>
+            <p>
+              That property helps you to align items vertically, 
+              and unlike <a href="http://caniuse.com/#search=flex" target="_blank">flexbox</a>&nbsp;
+              it's <a href="http://caniuse.com/#search=inline-block" target="_blank">
+              fully browser compatible</a>.
+            </p>
+            <p>
+              You can also you that grid with in JSX. Just add <code>\n</code> whitespaces
+              at the end of each columns.
+            </p>
           </div>
         </section>
-
         <section>
           <div className="container">
             <legend>Large grid - desktop</legend>

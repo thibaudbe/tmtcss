@@ -23,10 +23,9 @@ p {
   margin: 0 0 0.75em;
 }
 code {
-  background: #f7f8fb;
+  background: #f5e8e7;
   padding: 3px 6px;
-  border-radius: 3px;
-  font-size: 13px;
+  font-size: .8rem;
 }
 .btn {
   border: 1px solid white;
@@ -49,6 +48,12 @@ code {
   border-color: #313f5c;
   transition: all 240ms ease-in-out;
 }
+a {
+  color: #fc8d83;
+}
+a:hover {
+  text-decoration: none;
+}
 html,
 body {
   height: 100%;
@@ -59,8 +64,8 @@ body {
 body {
   color: #313f5c;
   font-family: "Lucida grande";
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.8;
 }
 body::before {
   z-index: 1;
@@ -89,11 +94,11 @@ header h1 {
   line-height: 1.2;
 }
 section {
-  padding: 4em 0;
+  padding: 4rem 0;
 }
 legend {
-  margin: 30px auto 1em;
-  font-size: 2em;
+  margin: 30px auto 10px;
+  font-size: 2rem;
   font-weight: bold;
 }
 .grid {
@@ -109,9 +114,9 @@ legend {
 footer {
   text-align: center;
   background: #fc8d83;
-  padding: 6em 0;
+  padding: 6rem 0;
   color: #cb5247;
-  margin-top: 6em;
+  margin-top: 6rem;
 }
 footer a {
   color: #cb5247;
